@@ -84,6 +84,21 @@
 - board: `https://github.com/users/petrukhinevg/projects/1`
 - рекомендуемые колонки: `Backlog`, `Ready`, `In Progress`, `Review`, `Done`
 
+## Рабочие ссылки
+
+- GitHub-репозиторий: `https://github.com/petrukhinevg/keyboardTrainer`
+- Доска задач: `https://github.com/users/petrukhinevg/projects/1`
+- Issues репозитория: `https://github.com/petrukhinevg/keyboardTrainer/issues`
+- Pull Requests: `https://github.com/petrukhinevg/keyboardTrainer/pulls`
+
+Базовый workflow:
+
+1. Задача создаётся в `Issues`.
+2. Задача автоматически или вручную попадает в `GitHub Projects`.
+3. Под задачу создаётся отдельная ветка.
+4. Открывается `Pull Request`.
+5. В описании PR указывается связанная задача, например: `Closes #15`.
+
 ## Локальный запуск
 
 ```bash
