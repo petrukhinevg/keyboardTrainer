@@ -1,4 +1,4 @@
-package com.keyboardtrainer.sqltrainer.app;
+package com.sqltrainer.app;
 
 import org.junit.jupiter.api.Test;
 

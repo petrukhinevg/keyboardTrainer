@@ -1,4 +1,4 @@
-package com.keyboardtrainer.sqltrainer;
+package com.sqltrainer;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

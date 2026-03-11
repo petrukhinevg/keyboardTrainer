@@ -113,7 +113,7 @@
 ## Структура пакетов
 
 ```text
-src/main/java/com/keyboardtrainer/sqltrainer
+src/main/java/com/sqltrainer
   app
   common
   feature/sqltrainer
