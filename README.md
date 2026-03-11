@@ -41,6 +41,18 @@ Note: `Java 8` is not used in this project. The current backend is already based
 - GitHub Projects for task tracking
 - GitHub Issues for backlog items
 
+## Local Environment
+
+- JDK 21
+- Gradle wrapper from the repository
+- Node.js 22 for the future frontend app
+- npm bundled with Node.js
+
+Checks before push:
+
+- `./gradlew test`
+- `./gradlew checkstyleMain checkstyleTest`
+
 ## Why This Frontend Stack
 
 - `React + TypeScript + Vite` keeps the frontend fast to develop and easy to scale.

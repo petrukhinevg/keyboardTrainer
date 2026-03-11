@@ -1,7 +1,5 @@
 package com.keyboardtrainer.sqltrainer.app;
 
-import static org.assertj.core.api.Assertions.assertThat;
-
 import org.junit.jupiter.api.Test;
 
 class HealthControllerTest {
@@ -10,6 +8,8 @@ class HealthControllerTest {
 
     @Test
     void shouldReturnOkStatus() {
-        assertThat(healthController.health()).containsEntry("status", "ok");
+        if (!"ok".equals(healthController.health().get("status"))) {
+            throw new AssertionError("Health status should be ok");
+        }
     }
 }
