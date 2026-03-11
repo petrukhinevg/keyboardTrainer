@@ -86,10 +86,10 @@
 
 ## Рабочие ссылки
 
-- GitHub-репозиторий: `https://github.com/petrukhinevg/keyboardTrainer`
-- Доска задач: `https://github.com/users/petrukhinevg/projects/1`
-- Issues репозитория: `https://github.com/petrukhinevg/keyboardTrainer/issues`
-- Pull Requests: `https://github.com/petrukhinevg/keyboardTrainer/pulls`
+- GitHub-репозиторий: [keyboardTrainer](https://github.com/petrukhinevg/keyboardTrainer)
+- Доска задач: [GitHub Projects](https://github.com/users/petrukhinevg/projects/1)
+- Issues репозитория: [Issues](https://github.com/petrukhinevg/keyboardTrainer/issues)
+- Pull Requests: [Pull Requests](https://github.com/petrukhinevg/keyboardTrainer/pulls)
 
 Базовый workflow:
 
