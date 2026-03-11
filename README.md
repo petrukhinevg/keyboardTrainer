@@ -62,7 +62,11 @@
 
 ## Роадмап
 
-Подробный роадмап находится в [docs/ROADMAP.md](/Users/petrukhinevg/IdeaProjects/keyboardTrainer/docs/ROADMAP.md).
+Подробные роадмапы находятся в:
+
+- [docs/ROADMAP.md](/Users/petrukhinevg/IdeaProjects/keyboardTrainer/docs/ROADMAP.md)
+- [docs/BACKEND_ROADMAP.md](/Users/petrukhinevg/IdeaProjects/keyboardTrainer/docs/BACKEND_ROADMAP.md)
+- [docs/FRONTEND_ROADMAP.md](/Users/petrukhinevg/IdeaProjects/keyboardTrainer/docs/FRONTEND_ROADMAP.md)
 
 ## Правило именования коммитов
 
