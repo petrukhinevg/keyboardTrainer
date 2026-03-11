@@ -1,28 +1,28 @@
 # keyboardTrainer
 
-SQL trainer focused on progressive practice of query-writing skills.
+Тренажёр для последовательной практики навыков написания SQL-запросов.
 
-## Product Flow
+## Пользовательский сценарий
 
-1. User logs in.
-2. User opens the level selection screen.
-3. Levels are unlocked in sequence as progress is completed.
-4. User opens a task and submits an SQL query.
-5. System checks the result and stores progress.
-6. User continues to the next task or returns to the main level menu.
+1. Пользователь входит в систему.
+2. Попадает на экран выбора уровней.
+3. Уровни открываются последовательно по мере прохождения.
+4. Пользователь открывает задание и отправляет SQL-запрос.
+5. Система проверяет результат и сохраняет прогресс.
+6. После этого пользователь либо идёт дальше, либо возвращается в главное меню выбора уровней.
 
-## Stack
+## Стек
 
-### Backend
+### Бэкенд
 
 - Java 21
 - Spring Boot
 - Spring JDBC
-- H2 for local development and early prototyping
+- H2 для локальной разработки и раннего прототипирования
 
-Note: `Java 8` is not used in this project. The current backend is already based on `Spring Boot 4`, which requires a modern Java version.
+Важно: `Java 8` в этом проекте не используется. Текущий бэкенд уже основан на `Spring Boot 4`, а он требует современную версию Java.
 
-### Frontend
+### Фронтенд
 
 - React
 - TypeScript
@@ -31,77 +31,77 @@ Note: `Java 8` is not used in this project. The current backend is already based
 - Tailwind CSS
 - Zustand
 
-### Optional additions
+### Дополнительные инструменты
 
-- Recharts for progress and statistics
-- Web Audio API for short feedback sounds
+- Recharts для прогресса и статистики
+- Web Audio API для коротких звуковых сигналов
 
-### Infrastructure
+### Инфраструктура
 
-- GitHub Projects for task tracking
-- GitHub Issues for backlog items
+- GitHub Projects для ведения задач
+- GitHub Issues для backlog-задач
 
-## Local Environment
+## Локальное окружение
 
 - JDK 21
-- Gradle wrapper from the repository
-- Node.js 22 for the future frontend app
-- npm bundled with Node.js
+- Gradle wrapper из репозитория
+- Node.js 22 для будущего фронтенда
+- npm, который идёт вместе с Node.js
 
-Checks before push:
+Проверки перед push:
 
 - `./gradlew test`
 - `./gradlew checkstyleMain checkstyleTest`
 
-## Why This Frontend Stack
+## Почему выбран такой фронтенд-стек
 
-- `React + TypeScript + Vite` keeps the frontend fast to develop and easy to scale.
-- `Tailwind CSS` is enough for the first version and avoids premature design-system work.
-- `Zustand` fits local UI state and training-session state without Redux overhead.
-- `Motion` is enough for transitions between menu, level screen, and task results.
-- `Recharts` should be added only when statistics screens actually appear.
-- `Web Audio API` is enough for lightweight success and error feedback.
+- `React + TypeScript + Vite` дают быструю разработку и простой рост проекта.
+- `Tailwind CSS` достаточен для первой версии и позволяет не строить дизайн-систему слишком рано.
+- `Zustand` подходит для локального UI state и состояния сессии тренировки без лишней нагрузки от Redux.
+- `Motion` достаточно для анимаций переходов между меню, уровнями и результатами заданий.
+- `Recharts` стоит подключать только тогда, когда реально появится экран статистики.
+- `Web Audio API` достаточно для лёгкого звукового feedback.
 
-## Roadmap
+## Роадмап
 
-Detailed roadmap lives in [docs/ROADMAP.md](/Users/petrukhinevg/IdeaProjects/keyboardTrainer/docs/ROADMAP.md).
+Подробный роадмап находится в [docs/ROADMAP.md](/Users/petrukhinevg/IdeaProjects/keyboardTrainer/docs/ROADMAP.md).
 
-## Commit Convention
+## Правило именования коммитов
 
-Commits are numbered in order using this mask:
+Коммиты нумеруются по маске:
 
 `NNN-short-description`
 
-Rules:
+Правила:
 
-- number grows sequentially
-- description is short and no longer than 40 characters
-- words are separated with hyphens
+- номер растёт последовательно
+- описание короткое, не длиннее 40 символов
+- слова разделяются дефисами
 
-Current repository history already has 3 commits, so the next commit starts from `004-...`.
+История репозитория уже ведётся по этой схеме.
 
-## Task Tracking
+## Таск-трекинг
 
-The project uses GitHub Projects:
+Для проекта используется GitHub Projects:
 
 - repository: `petrukhinevg/keyboardTrainer`
 - board: `https://github.com/users/petrukhinevg/projects/1`
-- suggested columns: `Backlog`, `Ready`, `In Progress`, `Review`, `Done`
+- рекомендуемые колонки: `Backlog`, `Ready`, `In Progress`, `Review`, `Done`
 
-## Local Run
+## Локальный запуск
 
-Backend:
+Бэкенд:
 
 ```bash
 ./gradlew bootRun
 ```
 
-Available backend endpoints:
+Доступные endpoints:
 
 - `GET /api/health`
 - `H2 console: /h2-console`
 
-## Package Structure
+## Структура пакетов
 
 ```text
 src/main/java/com/keyboardtrainer/sqltrainer

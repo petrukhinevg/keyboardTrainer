@@ -1,76 +1,76 @@
 # Roadmap
 
-## Product Goal
+## Цель проекта
 
-Build a training application for practicing SQL skills through sequential levels and tasks.
+Создать приложение для тренировки SQL-навыков через последовательные уровни и задания.
 
-## User Flow
+## Пользовательский сценарий
 
-1. User logs in.
-2. User opens the level selection screen.
-3. Levels are unlocked in sequence as progress is completed.
-4. User opens a task and submits an SQL query.
-5. System checks the result and stores progress.
-6. User continues to the next task or returns to the main level menu.
+1. Пользователь входит в систему.
+2. Попадает на экран выбора уровней.
+3. Уровни открываются последовательно по мере прохождения.
+4. Пользователь открывает задание и отправляет SQL-запрос.
+5. Система проверяет результат и сохраняет прогресс.
+6. После этого пользователь либо идёт дальше, либо возвращается в главное меню выбора уровней.
 
-## MVP Scope
+## Состав MVP
 
-The first working version should include:
+Первая рабочая версия должна включать:
 
-- login screen
-- level selection screen
-- sequential level unlocks
-- SQL task page
-- SQL answer validation
-- progress saving
-- return to main menu after task completion
+- экран входа
+- экран выбора уровней
+- последовательное открытие уровней
+- страницу SQL-задания
+- проверку SQL-ответа
+- сохранение прогресса
+- возврат в главное меню после выполнения задания
 
-## Phase 1. Foundation
+## Этап 1. Основа
 
-- set up backend API structure
-- set up frontend app with React and Vite
-- define domain model: user, level, task, submission, progress
-- keep H2 as the initial database
+- подготовить структуру backend API
+- поднять frontend-приложение на React и Vite
+- определить доменную модель: user, level, task, submission, progress
+- оставить H2 как начальную базу данных
 
-## Phase 2. Authentication
+## Этап 2. Аутентификация
 
-- implement login flow
-- keep the first version simple: local auth or mocked auth
-- store current user session
+- реализовать flow входа
+- первую версию оставить простой: local auth или mocked auth
+- хранить текущую пользовательскую сессию
 
-## Phase 3. Level Map
+## Этап 3. Карта уровней
 
-- build the main screen with available levels
-- lock levels until previous ones are completed
-- show completion state for each level
+- сделать главный экран с доступными уровнями
+- блокировать уровни, пока не пройдены предыдущие
+- показывать статус прохождения каждого уровня
 
-## Phase 4. SQL Task Engine
+## Этап 4. Движок SQL-заданий
 
-- define task format
-- prepare seed data for levels and tasks
-- execute user SQL against training datasets in H2
-- validate result sets, not only raw query text
+- определить формат задания
+- подготовить seed-данные для уровней и задач
+- выполнять пользовательский SQL на тренировочных данных в H2
+- валидировать результат запроса, а не только текст SQL
 
-## Phase 5. Progress Tracking
+## Этап 5. Отслеживание прогресса
 
-- save completed tasks
-- unlock next tasks and levels
-- keep attempt history and basic stats
+- сохранять выполненные задания
+- открывать следующие задачи и уровни
+- хранить историю попыток и базовую статистику
 
-## Phase 6. UX Polish
+## Этап 6. UX-полировка
 
-- add animated transitions
-- add success and error feedback
-- add basic sounds through Web Audio API
+- добавить анимированные переходы
+- добавить feedback на успех и ошибку
+- добавить базовые звуки через Web Audio API
 
-## Phase 7. Analytics
+## Этап 7. Аналитика
 
-- add user progress dashboard
-- add charts for completion rate and weak areas
-- introduce `Recharts` only at this stage
+- добавить экран пользовательского прогресса
+- добавить графики по темпу прохождения и слабым местам
+- подключить `Recharts` только на этом этапе
 
-## Phase 8. Database Migration
+## Этап 8. Миграция базы данных
 
-- replace H2 with a production-ready database
-- adapt SQL validation and seed scripts
-- keep repository and service boundaries stable during migration
+- заменить H2 на production-ready базу данных
+- адаптировать SQL-валидацию и seed-скрипты
+- сохранить стабильные границы между repository и service во время миграции
