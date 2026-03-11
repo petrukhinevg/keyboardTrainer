@@ -1,4 +1,4 @@
-package ru.petrukhinevg.keyboardtrainer.app;
+package com.keyboardtrainer.sqltrainer.app;
 
 import static org.assertj.core.api.Assertions.assertThat;
 

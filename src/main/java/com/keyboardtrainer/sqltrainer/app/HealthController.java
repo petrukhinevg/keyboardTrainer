@@ -1,4 +1,4 @@
-package ru.petrukhinevg.keyboardtrainer.app;
+package com.keyboardtrainer.sqltrainer.app;
 
 import java.util.Map;
 import org.springframework.web.bind.annotation.GetMapping;

@@ -31,7 +31,7 @@ The project uses GitHub Projects for a free visual task tracker tightly integrat
 ## Initial structure
 
 ```text
-src/main/java/ru/petrukhinevg/keyboardtrainer
+src/main/java/com/keyboardtrainer/sqltrainer
   app
   common
   feature/sqltrainer
