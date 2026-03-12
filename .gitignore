@@ -41,3 +41,7 @@ out/
 frontend/node_modules/
 frontend/dist/
 frontend/*.tsbuildinfo
+
+### Local Codex bootstrap ###
+/LOCAL_AGENT_START.md
+/.local.keys.env
