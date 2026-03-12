@@ -9,6 +9,8 @@ import org.springframework.test.context.ActiveProfiles;
 import javax.sql.DataSource;
 import java.sql.Connection;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 @SpringBootTest
 @ActiveProfiles("local")
 class LocalDataSourceTest {
@@ -20,17 +22,13 @@ class LocalDataSourceTest {
     private JdbcTemplate jdbcTemplate;
 
     @Test
-    void shouldUseH2ForLocalProfile() throws Exception {
+    void shouldUseH2Datasource() throws Exception {
         try (Connection connection = dataSource.getConnection()) {
             String databaseProduct = connection.getMetaData().getDatabaseProductName();
-            if (!"H2".equals(databaseProduct)) {
-                throw new AssertionError("Expected H2 datasource for local profile");
-            }
+            assertEquals("H2", databaseProduct, "Expected H2 datasource for local profile");
         }
 
         Integer probeResult = jdbcTemplate.queryForObject("SELECT 1", Integer.class);
-        if (!Integer.valueOf(1).equals(probeResult)) {
-            throw new AssertionError("Expected datasource probe query to return 1");
-        }
+        assertEquals(Integer.valueOf(1), probeResult, "Expected datasource probe query to return 1");
     }
 }
