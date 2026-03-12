@@ -1,7 +1,7 @@
 package com.sqltrainer.feature.sqltrainer.domain;
 
 public record User(
-    Long id,
+    long id,
     String username,
     String displayName
 ) {

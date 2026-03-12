@@ -27,25 +27,29 @@ class DomainModelTest {
             user.id(),
             task.id(),
             "select * from employees",
-            SubmissionStatus.ACCEPTED,
+            SubmissionStatus.PENDING,
             Instant.parse("2026-03-11T19:00:00Z")
         );
         Progress progress = new Progress(
             user.id(),
             level.id(),
             task.id(),
-            ProgressStatus.COMPLETED,
+            Instant.parse("2026-03-11T18:59:00Z"),
+            ProgressStatus.IN_PROGRESS,
             Instant.parse("2026-03-11T19:01:00Z")
         );
 
-        if (!task.levelId().equals(level.id())) {
+        if (task.levelId() != level.id()) {
             throw new AssertionError("Task should belong to the selected level");
         }
-        if (!submission.userId().equals(user.id())) {
+        if (submission.userId() != user.id()) {
             throw new AssertionError("Submission should belong to the selected user");
         }
-        if (!progress.taskId().equals(task.id())) {
+        if (progress.taskId() != task.id()) {
             throw new AssertionError("Progress should reference the selected task");
+        }
+        if (progress.createdAt().isAfter(progress.updatedAt())) {
+            throw new AssertionError("Progress creation time must not be after update time");
         }
     }
 }
