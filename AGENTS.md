@@ -12,22 +12,13 @@ At the start of each new chat for this repository:
 Additional rules:
 
 - Do not commit `LOCAL_AGENT_START.md` or `.local.keys.env`.
-- Prefer `GITHUB_AGENT_TOKEN` for GitHub access.
-- Use `GITHUB_AGENT_LOGIN` only when the task explicitly needs a login value.
-- Do not rely on `GITHUB_AGENT_PASSWORD` unless the task explicitly requires it.
-- Ignore `GITHUB_ADMIN_LOGIN` and `GITHUB_ADMIN_TOKEN` unless the task explicitly requires repository administration, access management, or owner-level GitHub actions.
-- Perform git and GitHub actions under the `AGENT` account using `GITHUB_AGENT_LOGIN` and `GITHUB_AGENT_TOKEN`.
+- Use `GITHUB_AGENT_LOGIN` and `GITHUB_AGENT_TOKEN` for git and GitHub actions. Use admin credentials only for owner-level repository actions. Do not rely on password auth unless explicitly required.
 - Do not push to `origin` until the user explicitly asks for it.
-- Before each `git push`, run backend checkstyle via `./gradlew checkstyleMain checkstyleTest`.
-- If a task changes backend code, prefer `./gradlew check` before push when time allows.
-- If there are already many local changes, or work is about to switch to a different task, commit the current logical unit before continuing.
-- Do not create several small commits for one task without a clear reason.
-- When review fixes belong to the same topic, prefer one consolidated follow-up commit.
-- For larger changes, avoid putting all logic in one file; prefer clear package boundaries and simple extensible structure.
-- Do not introduce Lombok unless there is a concrete need that outweighs the extra dependency and hidden code generation.
-- Follow `docs/ARCHITECTURE.md` for backend package placement and frontend/backend boundaries.
-- When task development is complete, submit the branch for code review.
-- When review comments are resolved, keep working in the same task branch.
-- Do not create a separate branch for review fixes.
-- When appropriate, add one follow-up commit in the same task branch and use a `review fix` postfix in the commit message.
-- If a task board or issue board is in use, move the task to `Review` after the reviewable state is ready.
+- Before each `git push`, run `./gradlew checkstyleMain checkstyleTest`. If backend code changed, prefer `./gradlew check`.
+- When pushing a task branch to `origin`, create a PR for that branch and link it to the corresponding task on the board.
+- If local changes are already large, or work is switching to another task, commit the current logical unit first.
+- Keep commits scoped: do not split one task into noisy micro-commits, but do not batch unrelated work together.
+- Keep review fixes in the same task branch. Do not create a separate review-fix branch. When needed, add one follow-up commit with a `review fix` postfix.
+- For epic work, merge child task branches into the epic branch first, and merge the epic branch into `main` only after all included child tasks are ready.
+- For larger changes, prefer clear package boundaries and simple extensible structure. Do not introduce Lombok unless there is a concrete need.
+- Use `docs/ARCHITECTURE.md` for backend/frontend boundaries, and move tasks to `Review` once the branch is in a reviewable state.
