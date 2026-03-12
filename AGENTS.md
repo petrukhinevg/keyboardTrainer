@@ -27,5 +27,7 @@ Additional rules:
 - Do not introduce Lombok unless there is a concrete need that outweighs the extra dependency and hidden code generation.
 - Follow `docs/ARCHITECTURE.md` for backend package placement and frontend/backend boundaries.
 - When task development is complete, submit the branch for code review.
-- When review comments are resolved, add one follow-up `review fix` commit when appropriate and resubmit for review.
+- When review comments are resolved, keep working in the same task branch.
+- Do not create a separate branch for review fixes.
+- When appropriate, add one follow-up commit in the same task branch and use a `review fix` postfix in the commit message.
 - If a task board or issue board is in use, move the task to `Review` after the reviewable state is ready.
